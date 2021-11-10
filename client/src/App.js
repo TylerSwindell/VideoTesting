@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
         <video width="320" height="240" controls>
-          <source src={`https://cors-anywhere.herokuappcom/${videos}`} type="video/mp4" muted/>
+          <source src={videos} type="video/mp4" muted/>
           Your browser does not support the video tag.
       </video>
       <Stories stor/>
