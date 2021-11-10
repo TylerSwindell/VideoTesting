@@ -1,0 +1,21 @@
+{
+  "name": "video-feature",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+      "build": "npm run init && npm run build-react",
+      "start": "node server --prefix server",
+      "build-react": "npm --prefix client run build",
+      "dev-server": "nodemon server --prefix server",
+      "dev-client": "npm start --prefix client",
+      "dev": "concurrently \"npm run dev-server\" \"npm run dev-client\"",
+      "init": "npm i && cd client && npm i && cd ../server && npm i"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.3.0"
+  }
+}
