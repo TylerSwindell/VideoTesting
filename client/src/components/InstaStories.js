@@ -43,7 +43,8 @@ const Story2 = ({ action, isPaused }) => {
 }
 
 const SERVER = process.env.REACT_APP_SERVER_URL || 'http://0.0.0.0';
-const PORT = process.env.REACT_APP_PORT || 4000;
+const PORT = (process.env.NODE_ENV === "production") ? process.env.REACT_APP_PORT : process.env.PORT || 5000;
+console.log(PORT);
 const videosEndPoint = '/videos'
 const videoID = '/video1';
 
