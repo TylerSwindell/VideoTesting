@@ -32,7 +32,7 @@ const Story2 = ({ action, isPaused }) => {
 
 const stories2 = [
 	{
-		url: '/videos',
+		url: 'http://0.0.0.0/videos',
     type: 'video'
 	},
 	{
