@@ -10,7 +10,7 @@ dotenv.config({ path: `${__dirname}/.env` });
 
 const server = express();
   const SERVER = process.env.SERVER_URL || 'http://0.0.0.0';
-  const PORT = process.env.SERVER_PORT || 3200;
+  const PORT = process.env.PORT || 3200;
 
 server.use(cors({
   origin: 'https://hb-video-testing.herokuapp.com/'
