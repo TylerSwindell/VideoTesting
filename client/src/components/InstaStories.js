@@ -1,5 +1,9 @@
-import Stories, { WithSeeMore } from 'react-insta-stories';
-import {useEffect, useState} from 'react';
+import Stories from 'react-insta-stories';
+import dotenv from 'dotenv';
+import path from 'path';
+
+const __dirname = path.resolve();
+dotenv.config({ path: `${__dirname}/.env` });
 
 const InstaStories = () => {
 
@@ -19,6 +23,14 @@ const InstaStories = () => {
   );
 }
 
+const contentStyle = {
+	background: '#333',
+	width: '100%',
+	padding: 20,
+	color: 'white',
+	height: '100%'
+}
+
 const Story2 = ({ action, isPaused }) => {
 	return <div style={{ ...contentStyle, background: 'Aquamarine', color: '#333' }}>
 		<h1>You get the control of the story.</h1>
@@ -30,9 +42,15 @@ const Story2 = ({ action, isPaused }) => {
 	</div>
 }
 
+const SERVER = process.env.SERVER_URL || 'http://0.0.0.0';
+const PORT = process.env.SERVER_PORT || 3200;
+const videosEndPoint = '/videos'
+
+const videos = `${SERVER}:${PORT}${videosEndPoint}`;
+
 const stories2 = [
 	{
-		url: 'http://0.0.0.0/videos',
+		url: `${videos}`,
     type: 'video'
 	},
 	{
@@ -43,33 +61,5 @@ const stories2 = [
 		content: Story2
 	}
 ]
-
-const image = {
-	display: 'block',
-	maxWidth: '100%',
-	borderRadius: 4,
-}
-
-const code = {
-	background: '#eee',
-	padding: '5px 10px',
-	borderRadius: '4px',
-	color: '#333'
-}
-
-const contentStyle = {
-	background: '#333',
-	width: '100%',
-	padding: 20,
-	color: 'white',
-	height: '100%'
-}
-
-const customSeeMore = {
-	textAlign: 'center',
-	fontSize: 14,
-	bottom: 20,
-	position: 'relative'
-}
 
 export default InstaStories;
