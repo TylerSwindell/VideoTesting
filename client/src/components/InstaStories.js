@@ -42,8 +42,8 @@ const Story2 = ({ action, isPaused }) => {
 	</div>
 }
 
-const SERVER = process.env.SERVER_URL || 'http://0.0.0.0';
-const PORT = process.env.PORT || 4000;
+const SERVER = process.env.REACT_APP_SERVER_URL || 'http://0.0.0.0';
+const PORT = process.env.REACT_APP_PORT || 4000;
 const videosEndPoint = '/videos'
 const videoID = '/video1';
 
