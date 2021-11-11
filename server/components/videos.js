@@ -5,10 +5,12 @@ const __dirname = path.resolve();
 
 
 const getVideos = (req, res) => {
-  const path = `${__dirname}/server/videos/video1.mp4`
+  const videoid = req.params.videoid
+  const path = `${__dirname}/server/videos/${videoid}.mp4`
   const stat = fs.statSync(path);
   const fileSize = stat.size;
   const range = req.headers.range
+  console.log(req);
 
   if (range) {
     const parts = range.replace(/bytes=/, "").split('-');

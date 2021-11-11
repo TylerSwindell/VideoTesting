@@ -7,4 +7,7 @@ router
   .route('/')
   .get(getVideos);
 
+router
+  .route('/:videoid')
+  .get(getVideos)
 export default router;

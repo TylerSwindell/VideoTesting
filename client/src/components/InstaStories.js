@@ -45,8 +45,9 @@ const Story2 = ({ action, isPaused }) => {
 const SERVER = process.env.SERVER_URL || 'http://0.0.0.0';
 const PORT = process.env.PORT || 3200;
 const videosEndPoint = '/videos'
+const videoID = '/video1';
 
-const videos = `${SERVER}:${PORT}${videosEndPoint}`;
+const videos = `${SERVER}:${PORT}${videosEndPoint}${videoID}`;
 
 const stories2 = [
 	{
