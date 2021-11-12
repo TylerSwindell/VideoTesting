@@ -3,7 +3,6 @@ import path from 'path';
 
 const __dirname = path.resolve();
 
-
 const getVideos = (req, res) => {
   const videoid = req.params.videoid
   const path = `${__dirname}/server/videos/${videoid}.mp4`

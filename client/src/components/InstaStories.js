@@ -3,7 +3,8 @@ import dotenv from 'dotenv';
 import path from 'path';
 
 const __dirname = path.resolve();
-dotenv.config({ path: `${__dirname}/.env` });
+dotenv.config({ path: `${__dirname}.env` });
+console.log(`${__dirname}.env`);
 
 const InstaStories = () => {
 
@@ -42,13 +43,17 @@ const Story2 = ({ action, isPaused }) => {
 	</div>
 }
 
-const SERVER = process.env.REACT_APP_SERVER_URL || 'http://0.0.0.0';
-const PORT = (process.env.NODE_ENV === "production") ? process.env.REACT_APP_PORT : process.env.PORT || 3200;
-console.log(PORT);
+const productionURL  = 'https://hb-video-testing.herokuapp.com';
+const developmentURL = 'http://0.0.0.0';
+const PORT = process.env.PORT || process.env.REACT_APP_PORT || 4000;
+const deploymentStatus = process.env.NODE_ENV;
+const url = (deploymentStatus) ? productionURL : developmentURL;
+
 const videosEndPoint = '/videos'
 const videoID = '/video1';
+console.log(deploymentStatus, PORT);
 
-const videos = `${SERVER}:${PORT}${videosEndPoint}${videoID}`;
+const videos = `${url}:${PORT}${videosEndPoint}${videoID}`;
 
 const stories2 = [
 	{
